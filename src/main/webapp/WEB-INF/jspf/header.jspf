@@ -1,0 +1,32 @@
+<%@ page import="com.opencode.test.entity.User" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>${title}</title>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="menu">
+                <ul class="mainMenu">
+                    <li><a href="/game">Main</a></li>
+                    <li><a href="/game/play">Start</a></li>
+                    <li><a href="/game/rating">Rating</a> </li>
+                </ul>
+                    <%
+                    User user =(User) session.getAttribute("user");
+                    if (user != null) { %>
+                       <div class="regMenu">Hi, ${user.login} | <a href="/game/logout">logout</a></div>
+                    <% } else {%>
+                        <ul class="regMenu">
+                            <li><a href="/game/login">Sign in</a></li>
+                            <span>|</span>
+                            <li><a href="/game/registration">Sign up</a></li>
+                        </ul>
+                    <% }%>
+
+            </div>
+        </div>
+        <div class="container">

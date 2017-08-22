@@ -1,0 +1,34 @@
+body {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.container {
+    padding: 5px;
+}
+
+.header {
+    background: #ddd;
+    height: 50px;
+}
+
+.mainMenu {
+    float: left;
+    overflow: hidden;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.mainMenu li {
+    display: inline;
+    margin: 0 10px 0 0;
+}
+
+.regMenu {
+    float: right;
+    margin-right: 10px;
+}
+
+.regMenu  li {
+    display: inline;
+}
