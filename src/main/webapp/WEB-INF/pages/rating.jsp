@@ -15,8 +15,13 @@
             int i = 0;
             for (Rating rating : ratings) {
         %>
+        <tr>
             <td><%=++i%></td>
             <td><%=rating.getUserName()%></td>
             <td><%=rating.getRating()%></td>
+        </tr>
+        <%
+            }
+        %>
     </tbody>
 </table>
