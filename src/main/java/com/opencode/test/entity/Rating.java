@@ -4,6 +4,7 @@ public class Rating {
 
     private int id;
     private int user_id;
+    private String userName;
     private float rating;
 
     public Rating() {
@@ -18,6 +19,14 @@ public class Rating {
         this.id = id;
         this.user_id = user_id;
         this.rating = rating;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public int getId() {
