@@ -14,7 +14,7 @@ public class Game {
     private byte cow;
     private List<Byte> playerNum = new ArrayList<Byte>();
     private List<String> history = new ArrayList<>();
-    private int coutnStep;
+    private int countStep = 0;
     private boolean endGame;
 
     public Game() {
@@ -61,6 +61,7 @@ public class Game {
 
         if (bull == 4) endGame = true;
         history.add(getResult());
+        countStep++;
         return getResult();
     }
 
@@ -109,12 +110,12 @@ public class Game {
         this.history = history;
     }
 
-    public int getCoutnStep() {
-        return coutnStep;
+    public int getCountStep() {
+        return countStep;
     }
 
-    public void setCoutnStep(int coutnStep) {
-        this.coutnStep = coutnStep;
+    public void setCountStep(int countStep) {
+        this.countStep = countStep;
     }
 
     public boolean isEndGame() {

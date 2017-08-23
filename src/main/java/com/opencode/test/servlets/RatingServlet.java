@@ -19,9 +19,6 @@ public class RatingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Rating> ratings = ratingDao.getAll();
-        for (Rating rating : ratings) {
-            rating.setUserName(userDao.getById(rating.getUser_id()).getLogin());
-        }
         req.setAttribute("ratings", ratings);
         req.getRequestDispatcher("/WEB-INF/pages/rating.jsp").forward(req, resp);
     }

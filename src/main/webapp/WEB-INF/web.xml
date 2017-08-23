@@ -28,10 +28,18 @@
         <servlet-name>ratingServlet</servlet-name>
         <servlet-class>com.opencode.test.servlets.RatingServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.opencode.test.servlets.UserServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>playServlet</servlet-name>
         <url-pattern>/play</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>playServlet</servlet-name>
+        <url-pattern>/check</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>registrationServlet</servlet-name>
@@ -48,6 +56,10 @@
     <servlet-mapping>
         <servlet-name>ratingServlet</servlet-name>
         <url-pattern>/rating</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/history</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

@@ -50,21 +50,25 @@ public class PlayServlet extends HttpServlet {
         Game game = (Game) session.getAttribute("game");
 
         String playerNumbers = req.getParameter("playerNumber");
+        if (playerNumbers == null) {
+            playerNumbers = "0000";
+        }
         if (validate.validate(playerNumbers)) {
 
             String result = game.check(playerNumbers);
+            req.setAttribute("count", game.getCountStep());
 
             if (game.isEndGame()) {
                 req.setAttribute("endGame", game.isEndGame());
                 game.getHistory().add("done!");
                 User user = (User) session.getAttribute("user");
-                History history = new History(user.getId(), game.getCoutnStep(), new Date(System.currentTimeMillis()));
+                History history = new History(user.getId(), game.getCountStep(), new Date(System.currentTimeMillis()));
                 historyDao.saveHistory(history);
                 ratingDao.updateRating(user);
             }
 
         } else {
-            req.setAttribute("message", "incorect number");
+            req.setAttribute("message", "incorrect number");
         }
 
         req.getRequestDispatcher("/WEB-INF/pages/game.jsp").forward(req, resp);

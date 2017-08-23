@@ -8,7 +8,7 @@
     <div class="gameField">
         <form action="/game/check" method="post">
             numbers<br>
-            <input type="number" maxlength="4" minlength="4" max="9999" min="0000">
+            <input type="number" maxlength="4" minlength="4" max="9999" min="0000" name="playerNumber">
             <input type="submit" value="check">
         </form>
     </div>
@@ -23,7 +23,7 @@
             for (String step : game.getHistory()) {
         %>
 
-        <li><%=step%></li>
+        <li>#${count}<%=step%></li>
 
         <%  } %>
     </ul>

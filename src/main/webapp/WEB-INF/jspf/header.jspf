@@ -18,7 +18,13 @@
                     <%
                     User user =(User) session.getAttribute("user");
                     if (user != null) { %>
-                       <div class="regMenu">Hi, ${user.login} | <a href="/game/logout">logout</a></div>
+                        <ul class="regMenu">
+                            <li>Hi, ${user.login}</li>
+                            <span>|</span>
+                            <li><a href="/game/history">History</a></li>
+                            <span>|</span>
+                            <li><a href="/game/logout">Logout</a></li>
+                        </ul>
                     <% } else {%>
                         <ul class="regMenu">
                             <li><a href="/game/login">Sign in</a></li>

@@ -30,6 +30,7 @@ public class UserDao {
                     .prepareStatement("SELECT u.login FROM user u WHERE u.id = ?");
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
+            rs.next();
             user.setLogin(rs.getString("login"));
         } catch (SQLException e) {
             e.printStackTrace();
@@ -44,6 +45,7 @@ public class UserDao {
             ps.setString(1, login);
             ps.setString(2, pass);
             ResultSet rs = ps.executeQuery();
+            rs.next();
             User user = new User(rs.getInt("id"), rs.getString("login"));
             return user;
         } catch (SQLException e) {

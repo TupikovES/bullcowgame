@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
         }
 
         session.setAttribute("user", user);
-        req.setAttribute("user", session.getAttribute("user"));
+//        req.setAttribute("user", session.getAttribute("user"));
         resp.sendRedirect("/game");
     }
 }

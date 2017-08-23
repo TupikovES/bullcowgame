@@ -21,6 +21,13 @@ public class Rating {
         this.rating = rating;
     }
 
+    public Rating(int id, int user_id, String userName, float rating) {
+        this.id = id;
+        this.user_id = user_id;
+        this.userName = userName;
+        this.rating = rating;
+    }
+
     public String getUserName() {
         return userName;
     }
